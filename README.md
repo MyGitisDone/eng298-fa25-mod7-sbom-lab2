@@ -66,7 +66,7 @@ Before generating SBOMs, collect information about the current Ubuntu system in 
 
    ```bash
    uname -a
-   lsb_release
+   cat /etc/os-release
    ```
    
 2. View currently installed packages and save the output in *before_patch.txt* inside your `/deliverables` folder:
