@@ -72,20 +72,20 @@ Before generating SBOMs, collect information about the current Ubuntu system in 
 2. View currently installed packages and save the output in *before_patch.txt* inside your `/deliverables` folder:
     
    ```bash
-   dpkg -l > ../deliverables/before_patch.txt
+   dpkg -l > deliverables/before_patch.txt
    ```
    
 #### **Part 2 – Generate Baseline SBOM and Vulnerability Report**
 1. Use Syft to create a system-level SBOM of APT-managed packages:
 
 ```bash
-syft packages:apt -o spdx-json > ../deliverables/system_sbom_before.json
+syft packages:apt -o spdx-json > deliverables/system_sbom_before.json
 ``` 
 
 2. Use Grype to scan the SBOM for known vulnerabilities:
 
 ```bash
-grype sbom:../deliverables/system_sbom_before.json -o table > ../deliverables/system_vulns_before.txt
+grype sbom:../deliverables/system_sbom_before.json -o table > deliverables/system_vulns_before.txt
 ``` 
 
 3. Review and record:
@@ -123,24 +123,24 @@ grype sbom:../deliverables/system_sbom_before.json -o table > ../deliverables/sy
 1. Take a second snapshot - save the updated package list as *after_patch.txt* inside your `/deliverables` folder:
 
    ```bash
-   dpkg -l > ../deliverables/after_patch.txt:
+   dpkg -l > deliverables/after_patch.txt:
    ```
 2. Regenerate the SBOM after updates:
 
    ```bash
-   syft packages:apt -o spdx-json > ../deliverables/system_sbom_after.json
+   syft packages:apt -o spdx-json > deliverables/system_sbom_after.json
    ```
 
 3. Re-scan for vulnerabilities:
 
    ```bash
-   grype sbom:../deliverables/system_sbom_after.json -o table > ../deliverables/system_vulns_after.txt
+   grype sbom:deliverables/system_sbom_after.json -o table > deliverables/system_vulns_after.txt
    ```
 
 4. Compare the before and after snapshots: Use the `diff` command to view changes between *before_patch.txt* and *after_patch.txt*:
 
    ```bash
-   diff ../deliverables/before_patch.txt ../deliverables/after_patch.txt > ../deliverables/patch_diff.txt
+   diff deliverables/before_patch.txt deliverables/after_patch.txt > deliverables/patch_diff.txt
    ```
 
 5. Review the resulting file (*patch_diff.txt*) to identify which packages were updated or removed.
