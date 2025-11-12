@@ -1,0 +1,42 @@
+
+{
+  "name": "ENG 298 (FA 25) – Module 7: Assignment: Maintaining Secure Systems with SBOMs and Patchings",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": false,
+      "upgradePackages": true
+    }
+  },
+
+  "postCreateCommand": "chmod +x .devcontainer/setup_tools.sh && .devcontainer/setup_tools.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker",
+        "tamasfe.even-better-toml",
+        "github.vscode-github-actions"
+      ],
+      "settings": {
+        "editor.tabSize": 2,
+        "files.trimTrailingWhitespace": true,
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "python.defaultInterpreterPath": "/usr/local/bin/python3"
+      }
+    }
+  },
+
+  "remoteUser": "vscode",
+
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "4gb",
+    "storage": "16gb"
+  }
+}
