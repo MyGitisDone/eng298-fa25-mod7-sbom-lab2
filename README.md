@@ -29,18 +29,25 @@ Typical output:
 
 ### **Tasks**
 
-#### **Part 1 – Generate a Baseline System SBOM**
-1. Use **Syft** to inventory all APT-managed packages on your system:
+#### **Part 1 – Generate Baseline System Information**
+Before generating SBOMs, collect information about the current Ubuntu system in your Codespace:
+
+1. Check the Linux and Ubuntu version:
+
+   ```bash
+   uname -a
+   lsb_release
+   ```
+2. View currently installed packages and save the output as before_patch.txt inside your /deliverables folder:
     
    ```bash
-   syft packages:apt -o spdx-json > system_sbom_before.json
-   ```
+   dpkg -l > ../deliverables/before_patch.txt
    
-3. Review the file `system_sbom_before.json`.  
+4. Review the file `system_sbom_before.json`.  
    - How many packages are listed?  
    - Note examples of key utilities (e.g., bash, curl, python3).
 
-4. Generate an initial vulnerability report with **Grype**:
+5. Generate an initial vulnerability report with **Grype**:
    
    ```bash
    grype sbom:system_sbom_before.json -o table > system_vulns_before.txt
