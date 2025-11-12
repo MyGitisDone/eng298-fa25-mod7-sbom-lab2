@@ -136,7 +136,7 @@ grype sbom:deliverables/system_sbom_before.json -o table > deliverables/system_v
    ```bash
    dpkg -l > deliverables/after_patch.txt
    ```
-2. Regenerate the SBOM after updates:
+2. Regenerate the SBOM after updates (**NOTE**: This scan will take approximately 3 minutes to complete):
 
    ```bash
    syft scan dir:/ -o spdx-json > deliverables/system_sbom_after.json
