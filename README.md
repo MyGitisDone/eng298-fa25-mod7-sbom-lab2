@@ -18,15 +18,15 @@ After completing this lab, you will be able to:
 
 ### **Terminology**
 **Packages** refer to the individual software components installed on your Ubuntu-based Codespace. A package is essentially a bundled unit of software, containing:
-* The program or library files
-* Metadata (version number, description, dependencies)
-* Instructions for installing, configuring, and removing it
+* The program or library files,
+* Metadata (version number, description, dependencies), and
+* Instructions for installing, configuring, and removing it.
 
  These are managed by Ubuntu’s package manager ('apt') and include:
-* System utilities (e.g., bash, coreutils, curl)
-* Programming languages and runtimes (e.g., python3, gcc)
-* Libraries used by other programs (e.g., libssl, libc6)
-* Tools and services required by the operating system
+* System utilities (e.g., bash, coreutils, curl),
+* Programming languages and runtimes (e.g., python3, gcc),
+* Libraries used by other programs (e.g., libssl, libc6), and
+* Tools and services required by the operating system.
   
 In this assignment, when you run commands like:
 
@@ -40,21 +40,21 @@ syft packages:apt
 These packages form the software supply chain of your operating environment — and generating SBOMs, scanning for CVEs, and applying updates allow you to evaluate and improve its security posture.
 
 **apt**, short for **Advanced Package Tool**, is the package management system used by Ubuntu and other Debian-based Linux distributions. It is responsible for:
-* Installing new software
-* Updating existing software
-* Removing software
-* Downloading and applying security patches
-* Managing dependencies between packages
+* Installing new software,
+* Updating existing software,
+* Removing software,
+* Downloading and applying security patches, and
+* Managing dependencies between packages.
 
 In this lab, you use `apt` to:
-* Refresh the system’s package index (`sudo apt update`)
-* View which packages can be upgraded (`sudo apt list --upgradable`)
-* Apply updates and security patches (`sudo apt upgrade -y`)
+* Refresh the system’s package index (`sudo apt update`),
+* View which packages can be upgraded (`sudo apt list --upgradable`), and
+* Apply updates and security patches (`sudo apt upgrade -y`).
 
 These actions are essential for:
-* Maintaining system integrity
-* Ensuring outdated or vulnerable software is replaced
-* Supporting continuous verification and assurance (key Module 7 concepts)
+* Maintaining system integrity,
+* Ensuring outdated or vulnerable software is replaced, and
+* Supporting continuous verification and assurance (key Module 7 concepts).
 
 ### **Environment Setup**
 All commands can be executed directly inside your GitHub Codespace using this repo.  
