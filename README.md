@@ -59,7 +59,7 @@ These actions are essential for:
 All commands can be executed directly inside your GitHub Codespace using this repo.  
 
 #### **Part 1 – Generate Baseline System Information**
-Before generating SBOMs, collect information about the current Ubuntu system in your Codespace:
+Before generating SBOMs, let's first collect information about the current Ubuntu system in your Codespace:
 
 1. Check the Linux and Ubuntu version:
 
